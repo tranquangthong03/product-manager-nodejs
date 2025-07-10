@@ -1,1 +1,21 @@
-header đây là tiêu đề
+header.header
+  .container
+    .row.align-items-center
+      //- Cột 1: Logo
+      .col-6.col-md-3
+        a.logo(href="/")
+          img(src="/images/logopage.png", alt="Logo")
+          | PCSTORE
+
+      //- Cột 2: Menu điều hướng
+      .col-12.col-md-6
+        nav.navbar
+          ul.nav-list
+            li: a(href="/") Trang chủ
+            li: a(href="/products") Sản phẩm
+
+      //- Cột 3: Nút đăng nhập/đăng ký
+      .col-6.col-md-3.text-end
+        .auth-buttons
+          a.btn.btn-primary(href="/login") Đăng nhập
+          a.btn.btn-primary(href="/register") Đăng ký

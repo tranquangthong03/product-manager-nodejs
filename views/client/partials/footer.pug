@@ -1,1 +1,13 @@
-footer đây là phần footer
+footer.footer
+  .container
+    .row
+      .col-md-6
+        //- Thông tin liên hệ hoặc bản quyền
+        p.mb-0
+          | &copy; #{new Date().getFullYear()} MyWebsite. All rights reserved.
+
+      .col-md-6.text-end
+        //- Social icons (nếu muốn)
+        a.mx-1(href="https://facebook.com", target="_blank") Facebook
+        a.mx-1(href="https://twitter.com", target="_blank") Twitter
+        a.mx-1(href="/about") About Us

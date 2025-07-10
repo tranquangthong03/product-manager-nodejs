@@ -1,0 +1,248 @@
+.test {
+  color: red;
+  background-color: yellow;
+}
+
+/* Header Styles */
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+}
+
+/* Logo Styles */
+.header .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header .logo:hover {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.header .logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Navigation Styles */
+.navbar {
+  padding: 0;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-list li a:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Auth Buttons Styles */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.auth-buttons .btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .logo {
+    font-size: 16px;
+  }
+
+  .header .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .nav-list {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .nav-list li a {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .auth-buttons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .auth-buttons .btn {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .logo {
+    font-size: 14px;
+  }
+
+  .header .logo img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-list {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .auth-buttons .btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Fix cho Bootstrap columns */
+@media (max-width: 767px) {
+  .header .col-12 {
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .header .col-6:last-child {
+    order: 2;
+  }
+}
+/* Footer */
+/* Footer Styles */
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 40px 0 20px 0;
+  margin-top: auto;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #adb5bd;
+}
+
+/* Footer Links */
+.footer a {
+  color: #adb5bd;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Social Links Styling */
+.footer .col-md-6.text-end a {
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.footer .col-md-6.text-end a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px 0;
+    text-align: center;
+  }
+
+  .footer .col-md-6.text-end {
+    text-align: center !important;
+    margin-top: 15px;
+  }
+
+  .footer p {
+    font-size: 13px;
+  }
+
+  .footer a {
+    font-size: 13px;
+    display: inline-block;
+    margin: 5px 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 20px 0 10px 0;
+  }
+
+  .footer a {
+    display: block;
+    margin: 8px 0;
+    padding: 8px;
+  }
+}
+
+/* Sticky Footer Support */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+/* Ensure footer is always at the bottom */

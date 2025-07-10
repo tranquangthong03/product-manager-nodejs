@@ -1,3 +1,43 @@
 extends ../../layouts/default.pug
+include ../..//mixins/box-head.pug
 block main
-    h1 day la trang products
+  .container.my-4
+    .row
+        .col-12
+            //- .boxhead
+            //-     h1.text-center.inner-title Danh sách sản phẩm
+            +boxHead("Danh sách sản phẩm")
+
+    .row
+      //- Sản phẩm mẫu 1
+      .col-12.col-md-4.mb-4
+        .card.h-100
+          img.card-img-top(src="/images/sample-product.jpg", alt="Tên sản phẩm 1")
+          .card-body
+            h5.card-title Tên sản phẩm 1
+            p.card-text Mô tả ngắn về sản phẩm 1
+            p.text-primary.font-weight-bold Giá: 100.000₫
+          .card-footer.bg-white
+            a.btn.btn-sm.btn-outline-primary(href="#") Xem chi tiết
+
+      //- Sản phẩm mẫu 2
+      .col-12.col-md-4.mb-4
+        .card.h-100
+          img.card-img-top(src="/images/sample-product.jpg", alt="Tên sản phẩm 2")
+          .card-body
+            h5.card-title Tên sản phẩm 2
+            p.card-text Mô tả ngắn về sản phẩm 2
+            p.text-primary.font-weight-bold Giá: 150.000₫
+          .card-footer.bg-white
+            a.btn.btn-sm.btn-outline-primary(href="#") Xem chi tiết
+
+      //- Sản phẩm mẫu 3
+      .col-12.col-md-4.mb-4
+        .card.h-100
+          img.card-img-top(src="/images/sample-product.jpg", alt="Tên sản phẩm 3")
+          .card-body
+            h5.card-title Tên sản phẩm 3
+            p.card-text Mô tả ngắn về sản phẩm 3
+            p.text-primary.font-weight-bold Giá: 80.000₫
+          .card-footer.bg-white
+            a.btn.btn-sm.btn-outline-primary(href="#") Xem chi tiết
