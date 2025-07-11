@@ -3,6 +3,8 @@ require("dotenv").config();
 const indexRoute = require("./routes/client/index.route");
 const app = express();
 const port = process.env.PORT;
+const connectDB = require("./config/database");
+connectDB.connect();
 // Cấu hình view engine là pug
 app.set("view engine", "pug");
 // Đường dẫn tới thư mục chứa các file pug (views)
