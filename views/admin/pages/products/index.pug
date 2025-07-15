@@ -1,0 +1,114 @@
+extends ../../layouts/default.pug
+
+block main
+  .d-flex.justify-content-between.align-items-center.mb-4
+    h2.mb-0
+      i.fas.fa-box.mr-2.text-primary
+      | Quản lý sản phẩm
+    .btn-group
+      a.btn.btn-success.btn-sm(href='#')
+        i.fas.fa-plus.mr-1
+        | Thêm sản phẩm
+      a.btn.btn-info.btn-sm(href='#')
+        i.fas.fa-download.mr-1
+        | Xuất Excel
+
+  //- Filter Buttons
+  .card.border-0.shadow-sm.mb-3
+    .card-body.py-3
+      .d-flex.justify-content-between.align-items-center
+        .filter-buttons
+          h6.mb-2.text-muted
+            i.fas.fa-filter.mr-1
+            | Bộ lọc trạng thái:
+          .btn-group.btn-group-sm(role="group")
+            each item in filterStatus 
+              a(
+                class=`btn btn-outline-${item.color} ${item.class}`
+                href='#'
+                data-status=item.status
+              )
+                i(class=`${item.icon} mr-1`)
+                | #{item.name}
+            //- a.btn.btn-outline-success(href='#', data-status='active')
+            //-   i.fas.fa-check-circle.mr-1
+            //-   | Hoạt động
+            //- a.btn.btn-outline-danger(href='#', data-status='inactive')
+            //-   i.fas.fa-times-circle.mr-1
+            //-   | Dừng hoạt động
+        .filter-info
+          .text-muted.small
+            i.fas.fa-info-circle.mr-1
+            | Tổng số sản phẩm: 
+            span.font-weight-bold 5
+          .text-muted.small
+            | Đang hiển thị: 
+            span.font-weight-bold 5 sản phẩm
+
+  .card.border-0.shadow-sm
+    .card-body.p-0
+      .table-responsive
+        table.table.table-hover.mb-0
+          thead
+            tr
+              th(style="width: 50px") 
+                i.fas.fa-hashtag
+                | STT
+              th(style="width: 80px") 
+                i.fas.fa-image.mr-1
+                | Hình ảnh
+              th 
+                i.fas.fa-tag.mr-1
+                | Tiêu đề
+              th(style="width: 100px") 
+                i.fas.fa-dollar-sign.mr-1
+                | Giá
+              th(style="width: 120px") 
+                i.fas.fa-toggle-on.mr-1
+                | Trạng thái
+              th(style="width: 150px") 
+                i.fas.fa-cogs.mr-1
+                | Hành động
+          tbody
+            each product,index in products 
+              tr
+                td.text-center.font-weight-bold #{index + 1}
+                td
+                  img.img-thumbnail(src=product.thumbnail, alt=product.title, style='width:50px; height:50px; object-fit:cover;')
+                td
+                  .font-weight-bold.text-dark #{product.title}
+                  .small.text-muted #{product.description}
+                td
+                  .font-weight-bold.text-success #{product.price}
+                  .small.text-muted Giá gốc
+                td
+                  if product.status === "active"
+                    span.badge.badge-success.px-2.py-1.status-clickable
+                      i.fas.fa-check-circle.mr-1
+                      | #{product.status}
+                  else
+                    span.badge.badge-danger.px-2.py-1.status-clickable
+                      i.fas.fa-times-circle.mr-1
+                      | #{product.status}
+                td
+                  .btn-group.btn-group-sm
+                    a.btn.btn-outline-primary(href='#', title='Xem')
+                      i.fas.fa-eye
+                    a.btn.btn-warning(href='#', title='Sửa')
+                      i.fas.fa-edit
+                    a.btn.btn-danger(href='#', title='Xóa', onclick='return confirm("Bạn có chắc muốn xóa?")')
+                      i.fas.fa-trash
+  //- Pagination
+  .d-flex.justify-content-between.align-items-center.mt-4
+    .text-muted
+      | Hiển thị 1-2 trong tổng số 2 sản phẩm
+    nav
+      ul.pagination.pagination-sm.mb-0
+        li.page-item.disabled
+          a.page-link(href='#') Trước
+        li.page-item.active
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') Sau

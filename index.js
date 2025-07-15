@@ -5,6 +5,7 @@ const indexRouteAdmin = require("./routes/admin/index.route");
 const app = express();
 const port = process.env.PORT;
 const connectDB = require("./config/database");
+const systemConfig = require("./config/system");
 connectDB.connect();
 // Cấu hình view engine là pug
 app.set("view engine", "pug");
@@ -12,6 +13,10 @@ app.set("view engine", "pug");
 app.set("views", "./views");
 app.use(express.static("public"));
 // Cấu hình đường dẫn tới thư mục chứa các file tĩnh (CSS, JS,..)
+
+// Khai báo biến toàn cục, có thể sử dụng ở tất cả các file pug
+app.locals.prefixAdmin = systemConfig.prefixAdmin;
+
 indexRouteClient(app);
 indexRouteAdmin(app);
 app.listen(port, () => {

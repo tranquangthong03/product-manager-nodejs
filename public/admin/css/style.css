@@ -1,0 +1,25 @@
+#sidebar.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #23272b;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+}
+
+#sidebar .nav-link {
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+#sidebar .nav-link.active,
+#sidebar .nav-link:hover {
+  background: #383d42;
+  color: #f8d90f;
+  border-left: 3px solid #f8d90f;
+}

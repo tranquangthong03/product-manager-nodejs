@@ -1,0 +1,31 @@
+aside.sidebar.bg-dark.text-white.d-flex.flex-column.h-100
+  //- Logo hoặc tên panel
+  .sidebar-header.p-3.border-bottom.border-secondary
+    a.text-white.text-decoration-none.font-weight-bold(href=`${prefixAdmin}/dashboard`) 
+      i.fas.fa-cogs.mr-2
+      | AdminPanel
+
+  //- Menu dọc
+  nav.flex-grow-1.py-3
+    ul.nav.flex-column
+      li.nav-item
+        a.nav-link.text-white.d-flex.align-items-center.py-2.px-3(href=`${prefixAdmin}/dashboard`)
+          i.fas.fa-tachometer-alt.mr-3
+          | Dashboard
+      li.nav-item
+        a.nav-link.text-white.d-flex.align-items-center.py-2.px-3.active(href=`${prefixAdmin}/products`)
+          i.fas.fa-box.mr-3
+          | Sản phẩm
+      li.nav-item
+        a.nav-link.text-white.d-flex.align-items-center.py-2.px-3(href=`${prefixAdmin}/users`)
+          i.fas.fa-users.mr-3
+          | Người dùng
+      li.nav-item
+        a.nav-link.text-white.d-flex.align-items-center.py-2.px-3(href=`${prefixAdmin}/orders`)
+          i.fas.fa-shopping-cart.mr-3
+          | Đơn hàng
+
+  //- Footer sidebar
+  .sidebar-footer.p-3.border-top.border-secondary
+    .text-muted.small
+      | © 2025 AdminPanel
