@@ -13,3 +13,19 @@ if (allStatusElements.length > 0) {
     });
   });
 }
+// Form Search
+const formSearch = document.querySelector("#formSearch");
+if (formSearch) {
+  let url = new URL(window.location.href);
+  formSearch.addEventListener("submit", (e) => {
+    const searchInput = e.target.elements.keyword.value;
+    e.preventDefault(); // Ngăn chặn hành động mặc định của form
+    if (searchInput) {
+      url.searchParams.set("keyword", searchInput);
+    } else {
+      url.searchParams.delete("keyword");
+    }
+    window.location.href = url.href;
+  });
+}
+//End Form Search

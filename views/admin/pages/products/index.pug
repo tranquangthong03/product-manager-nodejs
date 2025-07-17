@@ -16,34 +16,53 @@ block main
   //- Filter Buttons
   .card.border-0.shadow-sm.mb-3
     .card-body.py-3
-      .d-flex.justify-content-between.align-items-center
-        .filter-buttons
-          h6.mb-2.text-muted
-            i.fas.fa-filter.mr-1
-            | Bộ lọc trạng thái:
-          .btn-group.btn-group-sm(role="group")
-            each item in filterStatus 
-              a(
-                class=`btn btn-outline-${item.color} ${item.class}`
-                href='#'
-                data-status=item.status
-              )
-                i(class=`${item.icon} mr-1`)
-                | #{item.name}
-            //- a.btn.btn-outline-success(href='#', data-status='active')
-            //-   i.fas.fa-check-circle.mr-1
-            //-   | Hoạt động
-            //- a.btn.btn-outline-danger(href='#', data-status='inactive')
-            //-   i.fas.fa-times-circle.mr-1
-            //-   | Dừng hoạt động
-        .filter-info
-          .text-muted.small
-            i.fas.fa-info-circle.mr-1
-            | Tổng số sản phẩm: 
-            span.font-weight-bold 5
-          .text-muted.small
-            | Đang hiển thị: 
-            span.font-weight-bold 5 sản phẩm
+      .row.align-items-center
+        .col-md-8
+          .filter-buttons
+            h6.mb-2.text-muted
+              i.fas.fa-filter.mr-1
+              | Bộ lọc trạng thái:
+            .btn-group.btn-group-sm(role="group")
+              each item in filterStatus 
+                a(
+                  class=`btn btn-outline-${item.color} ${item.class}`
+                  href='#'
+                  data-status=item.status
+                )
+                  i(class=`${item.icon} mr-1`)
+                  | #{item.name}
+        .col-md-4
+          .search-box
+            h6.mb-2.text-muted
+              i.fas.fa-search.mr-1
+              | Tìm kiếm:
+            form#formSearch.search-form
+              .input-group.input-group-sm
+                .input-group-prepend
+                  span.input-group-text
+                    i.fas.fa-search
+                input.form-control(
+                  type="text"
+                  placeholder="Nhập từ khóa tìm kiếm..."
+                  id="searchInput"
+                  name="keyword"
+                  value=keyword
+                )
+                .input-group-append
+                  button.btn.btn-success(type="submit", id="searchBtn")
+                    i.fas.fa-search.mr-1
+                    | Tìm
+      
+      //- Filter Info
+      .row.mt-3
+        .col-12
+          .filter-info.text-center
+            .text-muted.small
+              i.fas.fa-info-circle.mr-1
+              | Tổng số sản phẩm: 
+              span.font-weight-bold 5
+              | | Đang hiển thị: 
+              span.font-weight-bold 5 sản phẩm
 
   .card.border-0.shadow-sm
     .card-body.p-0
