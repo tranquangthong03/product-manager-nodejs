@@ -29,3 +29,19 @@ if (formSearch) {
   });
 }
 //End Form Search
+// Pagination
+const buttonPagination = document.querySelectorAll("[button-pagination]");
+const prevPagination = document.querySelector("[button-pagination='prev']");
+if (buttonPagination) {
+  let url = new URL(window.location.href);
+  buttonPagination.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const page = parseInt(item.getAttribute("button-pagination"));
+      if (page) {
+        url.searchParams.set("page", page);
+        window.location.href = url.href;
+      }
+    });
+  });
+}
+//End Pagination
