@@ -1,0 +1,9 @@
+mixin filter-status(filterStatus)
+    each item in filterStatus 
+        a(
+            class=`btn btn-outline-${item.color} ${item.class}`
+            href='#'
+            data-status=item.status
+        )
+            i(class=`${item.icon} mr-1`)
+            | #{item.name}
